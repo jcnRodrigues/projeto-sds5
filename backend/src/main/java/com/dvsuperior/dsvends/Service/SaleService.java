@@ -1,6 +1,10 @@
 package com.dvsuperior.dsvends.Service;
 
+import java.util.List;
+
 import com.dvsuperior.dsvends.dto.SaleDTO;
+import com.dvsuperior.dsvends.dto.SaleSuccessDTO;
+import com.dvsuperior.dsvends.dto.SaleSumDTO;
 import com.dvsuperior.dsvends.entities.Sale;
 import com.dvsuperior.dsvends.repositories.SaleReposity;
 import com.dvsuperior.dsvends.repositories.SellerReposity;
@@ -30,6 +34,13 @@ public Page<SaleDTO> findAll(Pageable pageable){
     return result.map(x -> new SaleDTO(x));
 }
 
+@Transactional(readOnly = true)
+public List<SaleSumDTO> amountGroupedBySeller(){
+    return repository.amountGroupedBySeller();
+}
 
-
+@Transactional(readOnly = true)
+public List<SaleSuccessDTO> successGroupedBySeller(){
+    return repository.successGroupedBySeller();
+}
 }

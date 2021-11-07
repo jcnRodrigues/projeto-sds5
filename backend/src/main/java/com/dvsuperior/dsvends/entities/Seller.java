@@ -29,6 +29,9 @@ public class Seller {
         this.name = name;
     }
 
+    public Seller(){
+    }
+
     public String getName() {
         return name;
     }
@@ -38,9 +41,6 @@ public class Seller {
     }
     public List<Sale> getSales() {
         return sales;
-    }
-
-    public Seller() {
     }
 
     public long getId() {
