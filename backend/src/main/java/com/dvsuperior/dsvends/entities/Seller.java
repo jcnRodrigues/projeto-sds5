@@ -20,13 +20,19 @@ public class Seller {
     private long id;
     private String name;
 
+    @OneToMany(mappedBy = "seller")
+    private List<Sale> sales = new ArrayList<>();
+    
+
     public Seller(long id, String name) {
         this.id = id;
         this.name = name;
     }
+
     public String getName() {
         return name;
     }
+
     public void setName(String name) {
         this.name = name;
     }
@@ -34,10 +40,6 @@ public class Seller {
         return sales;
     }
 
-    @OneToMany(mappedBy = "seller")
-    private List<Sale> sales = new ArrayList<>();
-   
-   
     public Seller() {
     }
 

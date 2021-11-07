@@ -26,6 +26,8 @@ public class Sale {
     @JoinColumn(name = "seller_id")
     private Seller seller;
 
+    public Sale(){
+    }
 
     public Sale(long id, Integer visited, Integer deals, Double amount, LocalDate date, Seller seller) {
         this.id = id;
@@ -36,67 +38,45 @@ public class Sale {
         this.setSeller(seller);
     }
 
-
-
     public Seller getSeller() {
         return seller;
     }
-
-
 
     public void setSeller(Seller seller) {
         this.seller = seller;
     }
 
-
-
     public LocalDate getDate() {
         return date;
     }
-
-
 
     public void setDate(LocalDate date) {
         this.date = date;
     }
 
-
-
     public Double getAmount() {
         return amount;
     }
-
-
 
     public void setAmount(Double amount) {
         this.amount = amount;
     }
 
-
-
     public Integer getDeals() {
         return deals;
     }
-
-
 
     public void setDeals(Integer deals) {
         this.deals = deals;
     }
 
-
-
     public Integer getVisited() {
         return visited;
     }
 
-
-
     public void setVisited(Integer visited) {
         this.visited = visited;
     }
-
-
 
     public long getId() {
         return id;
